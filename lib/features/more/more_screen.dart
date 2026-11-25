@@ -83,7 +83,10 @@ class _HousesScreenState extends State<HousesScreen> {
   @override
   Widget build(BuildContext context) {
     final roster = SampleData.athletes.where((a) => a.house == house && a.name.toLowerCase().contains(query.toLowerCase())).toList()
-      ..sort((a, b) => a.year.compareTo(b.year));
+      ..sort((a, b) {
+        final p = (a.photo == null ? 1 : 0).compareTo(b.photo == null ? 1 : 0);
+        return p != 0 ? p : a.year.compareTo(b.year);
+      });
     final years = <int, int>{};
     for (final a in SampleData.athletes) {
       years[a.year] = (years[a.year] ?? 0) + 1;

@@ -7,11 +7,30 @@ import '../../data/sample_data.dart';
 import '../../domain/models.dart';
 import '../../state/providers.dart';
 
-class WelcomeScreen extends ConsumerWidget {
+class WelcomeScreen extends ConsumerStatefulWidget {
   const WelcomeScreen({super.key});
+  @override
+  ConsumerState<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Decode the photos the next screens show, so headers never flash an empty avatar.
+    for (final p in const [
+      'assets/images/avatar-sam-carter.jpg',
+      'assets/images/featured-relay.jpg',
+      'assets/images/staff-sam-carter.jpg',
+      'assets/images/empty-track.jpg',
+      'assets/logo/icon.png',
+    ]) {
+      precacheImage(AssetImage(p), context);
+    }
+  }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final top = MediaQuery.of(context).padding.top;
     return Scaffold(
       backgroundColor: C.bg,
@@ -39,13 +58,14 @@ class WelcomeScreen extends ConsumerWidget {
                 const SizedBox(width: 10),
                 const Text('Heatsheet', style: TextStyle(fontFamily: kDisplay, fontSize: 24, fontWeight: FontWeight.w800, color: Colors.white)),
                 const SizedBox(width: 12),
-                const Spacer(),
-                Flexible(
-                  flex: 8,
-                  child: Container(
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
                     decoration: BoxDecoration(color: const Color(0x801F0C18), borderRadius: BorderRadius.circular(999)),
                     child: const Text(SampleData.school, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontFamily: kBody, fontSize: 13, color: Colors.white)),
+                    ),
                   ),
                 ),
               ]),

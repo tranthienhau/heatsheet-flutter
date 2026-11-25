@@ -10,7 +10,7 @@ import '../fixtures/fixtures_screen.dart';
 
 const _stations = ['Track', 'Pit A', 'Field 2', 'Throws'];
 const _from = 9 * 60, _to = 12 * 60 + 30;
-const _pxPerMin = 2.2;
+const _pxPerMin = 3.0;
 
 /// Sports-day timetable by station, with clash warnings and a one-tap fix.
 class ScheduleScreen extends ConsumerStatefulWidget {

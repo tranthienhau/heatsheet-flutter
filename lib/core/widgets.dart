@@ -151,10 +151,12 @@ class SelectChip extends StatelessWidget {
         customBorder: const StadiumBorder(),
         onTap: onTap,
         child: Container(
-          constraints: const BoxConstraints(minHeight: 40),
+          height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          alignment: Alignment.center,
-          child: Text(label, style: TextStyle(fontFamily: kBody, fontSize: 14, fontWeight: FontWeight.w600, color: selected ? Colors.white : C.accentFill)),
+          child: Center(
+            widthFactor: 1,
+            child: Text(label, style: TextStyle(fontFamily: kBody, fontSize: 14, fontWeight: FontWeight.w600, color: selected ? Colors.white : C.accentFill)),
+          ),
         ),
       ),
     );

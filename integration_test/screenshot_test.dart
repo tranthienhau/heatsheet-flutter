@@ -29,6 +29,7 @@ void main() {
     for (var i = 0; i < 4; i++) {
       await tapKey(t, 'record-lane', settleMs: 300);
     }
+    await t.drag(find.byKey(const Key('results-list')), const Offset(0, 1500));
     await shot('04-enter-times');
     await tapKey(t, 'record-lane', settleMs: 300);
     await tapKey(t, 'submit-results', settleMs: 2600); // let the toast go before the next shot
