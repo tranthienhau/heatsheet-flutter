@@ -1,7 +1,7 @@
 name: heatsheet
-description: "A new Flutter project."
+description: "Heatsheet - school sports day, fixtures and live house standings (Flutter POC)."
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
   sdk: ^3.9.0
@@ -9,11 +9,28 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^3.0.0
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_driver:
     sdk: flutter
   flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/logo/
+  fonts:
+    - family: VarelaRound
+      fonts:
+        - asset: assets/fonts/VarelaRound-Regular.ttf
+    - family: Sniglet
+      fonts:
+        - asset: assets/fonts/Sniglet-Regular.ttf
+        - asset: assets/fonts/Sniglet-ExtraBold.ttf
+          weight: 800
