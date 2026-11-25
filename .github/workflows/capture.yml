@@ -1,4 +1,5 @@
 name: capture
+# Heatsheet (Flutter): screenshot_test.dart writes the stills, demo_test.dart drives the GIF.
 
 # Dispatched from the pod by make-poc-pod. Captures real Android screenshots + a demo GIF on a
 # KVM emulator and uploads them as the "capture" artifact. Never commits to the repo.
