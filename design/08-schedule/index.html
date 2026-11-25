@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff7fc;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&amp;family=Varela+Round&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "ink": "#1F0C18", "surface-variant": "#e8e0e5", "accent-pressed": "#C30379", "border-hairline": "#F0DDE8", "border-strong": "#B682AE", "surface": "#FFFFFF", "house-cedars": "#2FA36B", "surface-dim": "#dfd8dd", "secondary-container": "#fd6ac4", "success-bg": "#E3F4E9", "on-secondary": "#ffffff", "accent-tint": "#FEE6F5", "on-primary-fixed": "#3d0023", "on-secondary-fixed-variant": "#890063", "house-falcons": "#E5484D", "house-comets": "#F5B300", "danger-text": "#CE2020", "surface-container": "#f3ecf1", "tertiary-container": "#6d5cb2", "on-surface-variant": "#584049", "house-marlins": "#3E7BFA", "tertiary-fixed": "#e7deff", "surface-tint": "#b70071", "on-error": "#ffffff", "inverse-on-surface": "#f6eff3", "surface-container-low": "#f9f1f6", "primary-fixed": "#ffd9e5", "on-background": "#1e1b1e", "on-secondary-fixed": "#3c002a", "primary-container": "#ca047e", "success-text": "#0E7C3A", "on-tertiary-fixed": "#1e0061", "text-secondary": "#5E4656", "secondary": "#aa227e", "inverse-surface": "#332f33", "secondary-fixed": "#ffd8e9", "on-tertiary-container": "#eee6ff", "warning-text": "#A75906", "on-primary": "#ffffff", "outline": "#8c6f79", "on-tertiary-fixed-variant": "#4a388d", "tertiary": "#544398", "surface-alt": "#F7EAF2", "on-secondary-container": "#6d004f", "text-tertiary": "#7A6271", "surface-container-highest": "#e8e0e5", "tertiary-fixed-dim": "#cbbeff", "danger-bg": "#FBE5E5", "inverse-primary": "#ffb0cf", "warning-bg": "#FAEFE1", "on-primary-container": "#ffe3eb", "primary": "#9f0062", "support-strong": "#9880FA", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#8c0056", "surface-bright": "#fff7fc", "surface-container-lowest": "#ffffff", "background": "#fff7fc", "on-error-container": "#93000a", "surface-container-high": "#eee6eb", "on-surface": "#1e1b1e", "primary-fixed-dim": "#ffb0cf", "accent-fill": "#CA047E", "error": "#ba1a1a", "secondary-fixed-dim": "#ffaed9", "error-container": "#ffdad6", "outline-variant": "#e0bec9" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-xl": "24px", "space-sm": "8px", "space-lg": "16px", "space-md": "12px", "margin": "20px", "space-xxl": "32px", "space-xs": "4px" }, "fontFamily": { "caption": ["Varela Round"], "body": ["Varela Round"], "title": ["Varela Round"], "label": ["Varela Round"], "display": ["Sniglet"] }, "fontSize": { "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body text-ink flex flex-col min-h-screen selection:bg-accent-tint selection:text-accent-fill"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(31,12,24,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Heatsheet brand mark: vibrant plum and pink rounded square emblem with a bold athletic 'H' running track motif" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBKiLrlbWJWxTPDW5w6Yu_lG3n0gxX75AG_2h0CAA4Z-9urcSCtYnVzx33GlwJsnLkevE1FI6RX33yjrq_ZLJLUiztcaymQ3Di5cs9-H3PBIXONKpXFIeVQsi4I0cFn0nd5R8vo5ihuIYuIV9JiFhigYydbuZtlyjY_4A212NVhu_KoIqbiWJLE68Xvj9qm2e-nuZSJeOe8nUujtEPB20Qh0pVi5DfoSUw_I4e9lOMb"/><div class="flex items-center gap-space-sm"><h1 class="font-title text-title text-ink font-semibold tracking-tight">Schedule</h1><span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-accent-tint text-accent-fill font-label text-[11px] leading-tight font-medium">Sports Day 2026</span></div></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-background flex-grow px-margin"><div class="flex flex-col w-full pb-8 select-none">
+<!-- Title & Date Header Row -->
+<div class="flex items-center justify-between mt-3 mb-4">
+<div>
+<h1 class="font-display text-display text-ink leading-tight">Schedule</h1>
+<p class="font-caption text-caption text-text-secondary">Track &amp; field timeline live view</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-tint shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-accent-fill">calendar_today</span>
+<span class="font-label text-caption font-semibold text-accent-fill tracking-tight">Fri 28 Nov</span>
+</div>
+</div>
+<!-- Subheader Controls & View Toggle -->
+<div class="flex items-center justify-between gap-2 mb-4">
+<!-- Segmented Toggle Control -->
+<div class="inline-flex p-1 rounded-full bg-surface-alt items-center shadow-inner">
+<button class="px-3.5 py-1.5 rounded-full bg-surface text-ink font-label text-caption font-semibold shadow-sm transition-all flex items-center gap-1" id="btn-station-view" type="button">
+<span class="material-symbols-outlined text-[15px] text-accent-fill">view_column</span>
+<span>By station</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full text-text-secondary font-label text-caption font-medium hover:text-ink transition-all flex items-center gap-1" id="btn-time-view" type="button">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>By time</span>
+</button>
+</div>
+<!-- Auto-Arrange Action Pill -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface text-ink font-label text-caption font-medium shadow-sm active:scale-95 transition-transform" id="auto-arrange-btn" style="box-shadow: 0 1px 3px rgba(31,12,24,0.06), inset 0 0 0 1.5px #B682AE;" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span>Auto-arrange</span>
+</button>
+</div>
+<!-- FOCAL WARNING CARD (Clash Warning Alert) -->
+<div class="rounded-[20px] bg-warning-bg p-3.5 mb-4 shadow-[0_4px_16px_rgba(167,89,6,0.08)] relative overflow-hidden transition-all duration-300" id="clash-alert-card" style="box-shadow: 0 2px 8px rgba(167,89,6,0.08), inset 0 0 0 1.5px #A75906;">
+<div class="flex items-start gap-2.5">
+<div class="w-9 h-9 rounded-full bg-surface flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-warning-text">warning</span>
+</div>
+<div class="flex-1 min-w-0 pr-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-caption font-bold text-warning-text uppercase tracking-wider">1 Scheduling Clash</span>
+<span class="w-2 h-2 rounded-full bg-warning-text animate-pulse"></span>
+</div>
+<p class="font-body text-[13px] leading-[18px] text-warning-text mt-0.5 font-medium">
+<span class="font-bold">Noah Kim</span> is in 100m Heat 3 &amp; Long Jump at 10:20
+        </p>
+</div>
+<button class="shrink-0 self-center px-3.5 py-1.5 rounded-full bg-surface text-warning-text font-label text-caption font-bold shadow-sm active:bg-warning-bg transition-colors" id="resolve-clash-btn" style="box-shadow: inset 0 0 0 1px #A75906;" type="button">
+        Fix
+      </button>
+</div>
+</div>
+<!-- Interactive Quick Status Filter Tags -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-2">
+<button class="shrink-0 px-3 py-1 rounded-full bg-accent-fill text-on-primary font-label text-[12px] font-medium shadow-sm">All Grades</button>
+<button class="shrink-0 px-3 py-1 rounded-full bg-surface text-text-secondary font-label text-[12px] font-medium shadow-sm hover:text-ink">Year 7</button>
+<button class="shrink-0 px-3 py-1 rounded-full bg-surface text-text-secondary font-label text-[12px] font-medium shadow-sm hover:text-ink">Year 8</button>
+<button class="shrink-0 px-3 py-1 rounded-full bg-surface text-text-secondary font-label text-[12px] font-medium shadow-sm hover:text-ink">Year 9</button>
+<button class="shrink-0 px-3 py-1 rounded-full bg-surface text-text-secondary font-label text-[12px] font-medium shadow-sm hover:text-ink">Year 10</button>
+</div>
+<!-- TIMETABLE GRID / STATION VIEW CONTAINER -->
+<div class="w-full bg-surface rounded-[24px] shadow-[0_4px_24px_rgba(31,12,24,0.05)] p-3 overflow-hidden flex flex-col">
+<!-- Station Column Headers -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 pb-3 mb-2" style="box-shadow: inset 0 -1px 0 #F0DDE8;">
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">schedule</span>
+</div>
+<!-- Track Header -->
+<div class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-accent-tint">
+<span class="font-display text-[14px] leading-tight text-accent-fill font-bold">Track</span>
+<span class="font-caption text-[10px] text-accent-fill/80">Main Oval</span>
+</div>
+<!-- Pit A Header -->
+<div class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-success-bg">
+<span class="font-display text-[14px] leading-tight text-house-cedars font-bold">Pit A</span>
+<span class="font-caption text-[10px] text-house-cedars/80">Sand &amp; Mat</span>
+</div>
+<!-- Field 2 Header -->
+<div class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-surface-alt">
+<span class="font-display text-[14px] leading-tight text-secondary font-bold">Field 2</span>
+<span class="font-caption text-[10px] text-text-secondary">North Lawn</span>
+</div>
+</div>
+<!-- Grid Timeline Content -->
+<div class="relative flex flex-col gap-3 py-1">
+<!-- 09:00 Block Row -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[58px]">
+<div class="font-caption text-[12px] font-semibold text-text-tertiary pt-1 text-center">09:00</div>
+<!-- Track: 100m Y7 Girls -->
+<div class="p-2 rounded-xl bg-accent-tint flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">100m Y7 G</span>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Heat 1 • 8 run</span>
+</div>
+<!-- Pit A: Long Jump Y9 -->
+<div class="p-2 rounded-xl bg-success-bg flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Long Jump Y9</span>
+<span class="w-1.5 h-1.5 rounded-full bg-house-cedars"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Group A • 12 ath</span>
+</div>
+<!-- Field 2: Empty / Prep -->
+<div class="h-full rounded-xl bg-surface-container-low flex items-center justify-center opacity-40">
+<span class="font-caption text-[10px] text-text-tertiary italic">Setup</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 09:30 Block Row -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[58px]">
+<div class="font-caption text-[12px] font-semibold text-text-tertiary pt-1 text-center">09:30</div>
+<!-- Track: 200m Y8 Boys (starts 09:40) -->
+<div class="p-2 rounded-xl bg-surface-alt flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">200m Y8 B</span>
+<span class="text-[9px] font-bold px-1 rounded bg-surface text-ink">09:40</span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Final • 6 run</span>
+</div>
+<!-- Pit A: Continuation of Long Jump -->
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col justify-center items-center opacity-70">
+<span class="font-caption text-[10px] text-text-secondary">LJ Pit active</span>
+</div>
+<!-- Field 2: Tug of War Y8 (09:30) -->
+<div class="p-2 rounded-xl bg-surface-alt flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Tug of War</span>
+<span class="w-1.5 h-1.5 rounded-full bg-house-falcons"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Y8 Houses • Rd 1</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 10:00 Block Row -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[58px]">
+<div class="font-caption text-[12px] font-semibold text-text-tertiary pt-1 text-center">10:00</div>
+<!-- Track: Buffer / staging -->
+<div class="h-full rounded-xl bg-surface-container-low flex items-center justify-center opacity-40">
+<span class="font-caption text-[10px] text-text-tertiary">Warmup</span>
+</div>
+<!-- Pit A: High Jump Y8 (10:00) -->
+<div class="p-2 rounded-xl bg-accent-tint flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">High Jump</span>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Y8 Mixed • Bar 1.1m</span>
+</div>
+<!-- Field 2: Buffer -->
+<div class="h-full rounded-xl bg-surface-container-low flex items-center justify-center opacity-40">
+<span class="font-caption text-[10px] text-text-tertiary">Reset</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 10:20 - 10:30 CRITICAL CLASH ROW -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[76px] bg-warning-bg/40 -mx-2 px-2 py-1.5 rounded-2xl">
+<div class="font-caption text-[12px] font-bold text-warning-text pt-1 text-center">
+          10:20
+          <span class="block text-[9px] text-warning-text font-normal">Clash!</span>
+</div>
+<!-- Track: 100m Y9 Heat 3 (CLASH HIGHLIGHTED) -->
+<div class="p-2 rounded-xl bg-warning-bg flex flex-col justify-between shadow-md relative overflow-hidden" style="box-shadow: 0 0 0 2px #A75906;">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-warning-text truncate">100m Y9 H3</span>
+<span class="material-symbols-outlined text-[13px] text-warning-text font-bold">priority_high</span>
+</div>
+<div class="mt-1 flex flex-col">
+<span class="font-caption text-[10px] font-bold text-ink truncate">Noah Kim</span>
+<span class="font-caption text-[9px] text-warning-text font-semibold">Track lane 4</span>
+</div>
+</div>
+<!-- Pit A: Long Jump Y9 (CLASH HIGHLIGHTED) -->
+<div class="p-2 rounded-xl bg-warning-bg flex flex-col justify-between shadow-md relative overflow-hidden" style="box-shadow: 0 0 0 2px #A75906;">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-warning-text truncate">Long Jump Y9</span>
+<span class="material-symbols-outlined text-[13px] text-warning-text font-bold">priority_high</span>
+</div>
+<div class="mt-1 flex flex-col">
+<span class="font-caption text-[10px] font-bold text-ink truncate">Noah Kim</span>
+<span class="font-caption text-[9px] text-warning-text font-semibold">Attempt 2 of 3</span>
+</div>
+</div>
+<!-- Field 2: Sack Race Y7 (10:30) -->
+<div class="p-2 rounded-xl bg-accent-tint flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Sack Race</span>
+<span class="text-[9px] font-bold px-1 rounded bg-surface text-ink">10:30</span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Y7 Fun Points</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 11:00 Block Row -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[58px]">
+<div class="font-caption text-[12px] font-semibold text-text-tertiary pt-1 text-center">11:00</div>
+<!-- Track: 400m Senior -->
+<div class="p-2 rounded-xl bg-surface-alt flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">400m Opens</span>
+<span class="w-1.5 h-1.5 rounded-full bg-house-marlins"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Timed Finals</span>
+</div>
+<!-- Pit A: Triple Jump warmups -->
+<div class="p-2 rounded-xl bg-success-bg flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Triple Jump</span>
+<span class="w-1.5 h-1.5 rounded-full bg-house-cedars"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Y10 Briefing</span>
+</div>
+<!-- Field 2: Shot Put Y10 (11:15) -->
+<div class="p-2 rounded-xl bg-surface-alt flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Shot Put Y10</span>
+<span class="text-[9px] font-bold px-1 rounded bg-surface text-ink">11:15</span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Circle B • 4kg</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 11:30 Block Row -->
+<div class="grid grid-cols-[46px_1fr_1fr_1fr] gap-2 items-start relative min-h-[58px]">
+<div class="font-caption text-[12px] font-semibold text-text-tertiary pt-1 text-center">11:30</div>
+<!-- Track: Relay Heats -->
+<div class="p-2 rounded-xl bg-accent-tint flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">4x100m Relay</span>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">All Houses</span>
+</div>
+<!-- Pit A: Free practice -->
+<div class="h-full rounded-xl bg-surface-container-low flex items-center justify-center opacity-40">
+<span class="font-caption text-[10px] text-text-tertiary">Rake &amp; Prep</span>
+</div>
+<!-- Field 2: Javelin Clinic -->
+<div class="p-2 rounded-xl bg-surface-alt flex flex-col justify-between shadow-[0_1px_4px_rgba(31,12,24,0.03)] cursor-pointer active:scale-95 transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-ink leading-tight truncate">Javelin Demo</span>
+<span class="w-1.5 h-1.5 rounded-full bg-house-comets"></span>
+</div>
+<span class="font-caption text-[10px] text-text-secondary mt-1">Safety Check</span>
+</div>
+</div>
+<!-- Divider line -->
+<div class="w-full h-px bg-border-hairline ml-[46px]"></div>
+<!-- 12:00 Lunch Block Row -->
+<div class="grid grid-cols-[46px_1fr] gap-2 items-center min-h-[44px] bg-surface-alt/60 rounded-xl px-2">
+<div class="font-caption text-[12px] font-bold text-text-secondary text-center">12:00</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">restaurant</span>
+<span class="font-label text-caption font-semibold text-ink">Official Lunch &amp; House Tally Update</span>
+<span class="ml-auto font-caption text-[11px] text-text-secondary">45 min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Resolution Modal Sheet (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm flex items-end justify-center hidden opacity-0 transition-opacity duration-200" id="resolution-modal">
+<div class="w-full max-w-md bg-surface rounded-t-[28px] p-5 pb-8 shadow-2xl flex flex-col gap-4 transform translate-y-full transition-transform duration-300">
+<div class="w-10 h-1.5 rounded-full bg-border-hairline self-center mb-1"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center gap-1 font-label text-[11px] font-bold text-warning-text uppercase tracking-wider bg-warning-bg px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px]">warning</span> Conflict Resolution
+          </span>
+<h3 class="font-display text-[20px] text-ink font-bold mt-1">Move Noah Kim</h3>
+<p class="font-caption text-caption text-text-secondary">Choose an alternate slot to eliminate event overlap:</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-alt flex items-center justify-center text-text-secondary hover:text-ink" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Option 1: Move Track Heat -->
+<div class="p-3.5 rounded-2xl bg-surface-alt flex items-center justify-between cursor-pointer active:scale-98 transition-transform" style="box-shadow: inset 0 0 0 1px #B682AE;">
+<div class="flex flex-col">
+<span class="font-label text-caption font-bold text-ink">Swap Noah into 100m Heat 4</span>
+<span class="font-caption text-[12px] text-text-secondary">10:35 Track • Lane 2 open</span>
+</div>
+<button class="resolve-option-btn px-3 py-1.5 rounded-full bg-accent-fill text-on-primary font-label text-[12px] font-bold shadow-sm" type="button">
+          Apply
+        </button>
+</div>
+<!-- Option 2: Move Field Flight -->
+<div class="p-3.5 rounded-2xl bg-surface-alt flex items-center justify-between cursor-pointer active:scale-98 transition-transform" style="box-shadow: inset 0 0 0 1px #B682AE;">
+<div class="flex flex-col">
+<span class="font-label text-caption font-bold text-ink">Shift Long Jump flight to 10:45</span>
+<span class="font-caption text-[12px] text-text-secondary">Pit A Flight B • +25 mins</span>
+</div>
+<button class="resolve-option-btn px-3 py-1.5 rounded-full bg-surface text-ink font-label text-[12px] font-bold shadow-sm" style="box-shadow: inset 0 0 0 1px #B682AE;" type="button">
+          Apply
+        </button>
+</div>
+<p class="font-caption text-[11px] text-center text-text-tertiary">Changes sync automatically with teachers at Station Pit A and Track Marshall.</p>
+</div>
+</div>
+</div>
+<script>
+  (function initScheduleInteractions() {
+    const modal = document.getElementById('resolution-modal');
+    const modalSheet = modal ? modal.querySelector('div') : null;
+    const fixBtn = document.getElementById('resolve-clash-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const autoArrangeBtn = document.getElementById('auto-arrange-btn');
+    const clashCard = document.getElementById('clash-alert-card');
+    const optionBtns = document.querySelectorAll('.resolve-option-btn');
+    const toggleStation = document.getElementById('btn-station-view');
+    const toggleTime = document.getElementById('btn-time-view');
+
+    function openModal() {
+      if (!modal || !modalSheet) return;
+      modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        modalSheet.classList.remove('translate-y-full');
+      });
+    }
+
+    function closeModal() {
+      if (!modal || !modalSheet) return;
+      modalSheet.classList.add('translate-y-full');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+    }
+
+    if (fixBtn) fixBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    // Interactive resolution action
+    optionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        closeModal();
+        if (clashCard) {
+          clashCard.style.transform = 'scale(0.96)';
+          clashCard.style.opacity = '0.4';
+          setTimeout(() => {
+            clashCard.innerHTML = `
+              <div class="flex items-center gap-2 text-success-text">
+                <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                <span class="font-label text-caption font-bold">Clash resolved! Noah shifted to Heat 4 (10:35).</span>
+              </div>
+            `;
+            clashCard.className = 'rounded-[20px] bg-success-bg p-3.5 mb-4 transition-all duration-300';
+            clashCard.style.boxShadow = 'inset 0 0 0 1.5px #2FA36B';
+            clashCard.style.transform = 'scale(1)';
+            clashCard.style.opacity = '1';
+          }, 300);
+        }
+      });
+    });
+
+    // Auto-arrange quick feedback
+    if (autoArrangeBtn) {
+      autoArrangeBtn.addEventListener('click', () => {
+        const icon = autoArrangeBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => {
+            icon.classList.remove('animate-spin');
+            openModal();
+          }, 450);
+        }
+      });
+    }
+
+    // Segmented toggle interactive tabs
+    if (toggleStation && toggleTime) {
+      toggleStation.addEventListener('click', () => {
+        toggleStation.className = 'px-3.5 py-1.5 rounded-full bg-surface text-ink font-label text-caption font-semibold shadow-sm transition-all flex items-center gap-1';
+        const stIcon = toggleStation.querySelector('.material-symbols-outlined');
+        if (stIcon) stIcon.className = 'material-symbols-outlined text-[15px] text-accent-fill';
+
+        toggleTime.className = 'px-3.5 py-1.5 rounded-full text-text-secondary font-label text-caption font-medium hover:text-ink transition-all flex items-center gap-1';
+        const tmIcon = toggleTime.querySelector('.material-symbols-outlined');
+        if (tmIcon) tmIcon.className = 'material-symbols-outlined text-[15px]';
+      });
+
+      toggleTime.addEventListener('click', () => {
+        toggleTime.className = 'px-3.5 py-1.5 rounded-full bg-surface text-ink font-label text-caption font-semibold shadow-sm transition-all flex items-center gap-1';
+        const tmIcon = toggleTime.querySelector('.material-symbols-outlined');
+        if (tmIcon) tmIcon.className = 'material-symbols-outlined text-[15px] text-accent-fill';
+
+        toggleStation.className = 'px-3.5 py-1.5 rounded-full text-text-secondary font-label text-caption font-medium hover:text-ink transition-all flex items-center gap-1';
+        const stIcon = toggleStation.querySelector('.material-symbols-outlined');
+        if (stIcon) stIcon.className = 'material-symbols-outlined text-[15px]';
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(31,12,24,0.06)]" data-active-classes="text-accent-fill [&amp;_.nav-pill]:bg-accent-tint [&amp;_.nav-pill]:text-accent-fill"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-text-secondary transition-colors" data-path="live" href="#"><div class="nav-pill w-12 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">sensors</span></div><span class="font-caption text-[11px] font-medium mt-0.5">Live</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-text-secondary transition-colors" data-path="events" href="#"><div class="nav-pill w-12 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">sports</span></div><span class="font-caption text-[11px] font-medium mt-0.5">Events</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 transition-colors text-accent-fill [&amp;_.nav-pill]:bg-accent-tint [&amp;_.nav-pill]:text-accent-fill" data-path="schedule" href="#"><div class="nav-pill w-12 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">calendar_month</span></div><span class="font-caption text-[11px] font-medium mt-0.5">Schedule</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-text-secondary transition-colors" data-path="standings" href="#"><div class="nav-pill w-12 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">leaderboard</span></div><span class="font-caption text-[11px] font-medium mt-0.5">Standings</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-text-secondary transition-colors" data-path="more" href="#"><div class="nav-pill w-12 h-7 rounded-full flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[22px]">more_horiz</span></div><span class="font-caption text-[11px] font-medium mt-0.5">More</span></a></div></nav></body></html>

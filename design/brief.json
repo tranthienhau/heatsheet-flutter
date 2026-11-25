@@ -1,0 +1,418 @@
+{
+  "title": "Heatsheet",
+  "slug": "heatsheet",
+  "domain": "education",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Role pick at sign in: School admin, Organiser / PE teacher, Official, Spectator, each sees only what it needs",
+    "Live event dashboard: event progress, events running now, results waiting, live house standings",
+    "Event list: sports days, house competitions, inter-school tournaments, swimming galas",
+    "Create event wizard: event type, sport, competition format (round robin, league, knockout, groups + knockout), houses, scoring",
+    "Houses, year groups, classes and teams with participant assignment",
+    "Sports day schedule: activities on stations with time slots, conflict warnings when a student is in two places at once",
+    "Automatic fixture generation for round robin and league, with manual edit",
+    "Knockout bracket with semi-finals, final and third-place match",
+    "Fast result entry for track events: lane times, auto positions and house points",
+    "Fast score entry for team matches: score steppers, win / draw / loss",
+    "Standings: house totals, medal table, league table, updated live",
+    "Public display mode: full-screen leaderboard for a projector or TV",
+    "User roles and permissions per event"
+  ],
+  "bannedTerms": [
+    "payment",
+    "subscription",
+    "premium",
+    "AI",
+    "parent chat",
+    "Google Classroom",
+    "SIS sync",
+    "livestream"
+  ],
+  "screenCount": 15,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Live",
+        "Events",
+        "Schedule",
+        "Standings",
+        "More"
+      ],
+      "icons": [
+        "activity",
+        "calendar-days",
+        "clock",
+        "trophy",
+        "menu"
+      ],
+      "note": "Flat white bar, 1px top hairline border #F0DDE8, no gradient. Active tab: icon + label in accentFill #DE048A with a small accentTint pill behind the icon; inactive: text.secondary #5E4656."
+    },
+    "statusBar": "Header on tab screens: screen title on the left in display style (Sniglet 32), a small event chip 'Sports Day 2026' and a round avatar on the right.",
+    "houses": "Four houses used as data colors only (dots, bars, chips with dark text): Falcons red #E5484D, Marlins blue #3E7BFA, Cedars green #2FA36B, Comets yellow #F5B300. Always shown with the house name, never color alone.",
+    "controls": "Primary button: pill, 56px tall, accentFill #DE048A with white label (pressed accentPressed, disabled 40% opacity). Secondary button: pill, white with 1.5px borderStrong border, ink label. Text input: 12px radius, 52px, white, borderStrong border, focus = 2px accentFill ring, error = danger border + 13px helper. Card: white, 20px radius, soft shadow. Chip: pill, 32px, accentTint fill with accentFill text, 13px; selected chip = accentFill fill with white text. Live badge: small pill with a dot, danger-free (accentFill text on accentTint). Progress bar: 8px pill track surfaceAlt, fill accentFill."
+  },
+  "screens": [
+    {
+      "name": "welcome",
+      "purpose": "First launch: what the app does and sign in",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Real photo hero of school children in house colour t-shirts sprinting on a grass running track on a sunny sports day, dark ink gradient at the bottom for text; small logo mark H; headline 'Run sports day from one screen.'; subline 'Fixtures, results and house points, live for every teacher and every screen.'; 3 small proof chips 'Auto fixtures', 'Live standings', 'Big-screen mode'; primary button 'Sign in with school email'; text button 'View live results as a spectator'"
+    },
+    {
+      "name": "role-select",
+      "purpose": "Pick a role so each user sees only what they need",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Back arrow; title 'How are you helping today?'; subline 'Westbrook Academy, Sports Day 2026'; 4 large selectable rows with an icon: 'School admin, manage houses, users and events', 'Organiser / PE teacher, create events, fixtures and enter scores' (selected, accent ring + check), 'Official, enter times and results for assigned stations', 'Spectator, view live scores and standings'; helper 'Your school admin can change your access later'; primary button 'Continue as Organiser'"
+    },
+    {
+      "name": "live-dashboard",
+      "purpose": "Organiser overview of the whole sports day while it runs",
+      "group": "core",
+      "nav": "Live",
+      "states": [
+        "default",
+        "empty"
+      ],
+      "content": "Header 'Live' with chip 'Sports Day 2026' and avatar; FOCAL hero card on the gradient with white text: 'Event progress 14 of 32 events', big '44%' and a progress bar, '3 running now, 5 results waiting'; row of 4 house total pills with dark text: 'Falcons 186', 'Marlins 174', 'Cedars 162', 'Comets 151' with coloured dots; section 'Running now' list: 'Year 7 Girls 100m, Track, Heat 2', 'Long Jump Year 9 Boys, Pit A', 'Tug of War Year 8, Field 2' each with a LIVE badge; section 'Results waiting' with 2 rows and a small 'Enter' button: 'Year 8 Boys 200m, Track', 'Shot Put Year 10 Girls, Throws'; section 'Up next' 'Relay 4x100 Year 7, 11:40'"
+    },
+    {
+      "name": "live-dashboard-empty",
+      "purpose": "First-run dashboard before any event is created",
+      "group": "core",
+      "nav": "Live",
+      "states": [
+        "empty"
+      ],
+      "content": "Header 'Live' with avatar; FOCAL real photo of an empty school running track with lane lines on a bright morning, rounded card; title 'No events yet'; text 'Create a sports day or tournament and the live overview appears here.'; primary button 'Create first event'; secondary button 'Import houses and students'"
+    },
+    {
+      "name": "events",
+      "purpose": "Browse every event and competition of the school",
+      "group": "core",
+      "nav": "Events",
+      "states": [
+        "default"
+      ],
+      "content": "Title 'Events'; search field 'Search events'; filter chips 'All' (selected), 'Sports days', 'Tournaments', 'House cups', 'Galas'; FOCAL featured card with real photo of a relay baton handover, ink gradient overlay, 'Sports Day 2026', 'Today, 32 events, 4 houses', LIVE badge; list rows each with a real photo thumbnail and a status chip: 'Inter-school Football Cup, Knockout, 8 schools, Sat 6 Dec' (Scheduled), 'Year 9 Basketball League, Round robin, 6 teams' (In progress), 'Swimming Gala, 18 races, Fri 12 Dec' (Draft), 'Volleyball House Cup, Groups + knockout' (Completed); floating round accent button with plus 'New event'"
+    },
+    {
+      "name": "create-event",
+      "purpose": "Create a competition with format and scoring in one screen",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Top bar with close button and title 'New competition', step 'Step 2 of 3'; field 'Name' with 'Year 9 Basketball League'; sport chips 'Football', 'Basketball' (selected), 'Volleyball', 'Netball'; section 'Format' FOCAL 2x2 grid of selectable cards with small bracket or table icons: 'Round robin' (selected), 'League', 'Knockout', 'Groups + knockout'; toggle rows 'Third-place match' off, 'Home and away' off; section 'Points' with steppers 'Win 3', 'Draw 1', 'Loss 0'; row 'Teams: 6 from Year 9' ; primary button 'Generate fixtures'"
+    },
+    {
+      "name": "houses-teams",
+      "purpose": "Manage houses, year groups, classes and team rosters",
+      "group": "detail",
+      "nav": "More",
+      "states": [
+        "default"
+      ],
+      "content": "Title 'Houses and teams'; segmented control 'Houses' (selected), 'Year groups', 'Teams'; FOCAL 2x2 grid of house cards each with a thick colour top band and dark text: 'Falcons, 212 students, Captain Ava Patel', 'Marlins, 208 students', 'Cedars, 205 students', 'Comets, 210 students'; section 'Falcons roster' search field; rows with small real photo avatars of students and class + year chips: 'Ava Patel, 9B, Year 9', 'Noah Kim, 7A, Year 7', 'Mia Johnson, 8C, Year 8', 'Leo Garcia, 10A, Year 10'; button 'Assign students'"
+    },
+    {
+      "name": "schedule",
+      "purpose": "Sports day timetable on stations with clash warnings",
+      "group": "core",
+      "nav": "Schedule",
+      "states": [
+        "default"
+      ],
+      "content": "Title 'Schedule'; day chip 'Fri 28 Nov' and toggle 'By station' (selected) / 'By time'; FOCAL warning card with warning icon (warning colour, not red): '1 clash, Noah Kim is in 100m Heat 3 and Long Jump at 10:20' with a text button 'Fix'; timeline with time labels 09:00 to 12:00 down the left and 3 station columns 'Track', 'Pit A', 'Field 2'; event blocks with tinted fills: '100m Y7 Girls 09:00', '200m Y8 Boys 09:40', 'Long Jump Y9 09:00', 'High Jump Y8 10:00', 'Tug of War Y8 09:30', 'Sack Race Y7 10:30'; one block outlined in warning colour for the clash; small button 'Auto-arrange'"
+    },
+    {
+      "name": "fixtures",
+      "purpose": "Auto-generated round robin fixtures, editable by hand",
+      "group": "core",
+      "nav": "Schedule",
+      "states": [
+        "default"
+      ],
+      "content": "Back arrow, title 'Year 9 Basketball League'; segmented control 'Fixtures' (selected), 'Table', 'Bracket'; FOCAL banner 'Fixtures generated: 15 matches over 5 rounds, no clashes' with a check icon and a text button 'Regenerate'; 'Round 1, Mon 1 Dec' list of match cards: 'Falcons A 42 - 38 Marlins A, Final' , 'Cedars A vs Comets A, 13:10, Court 1', 'Falcons B vs Cedars B, 13:10, Court 2' each with a drag handle and edit pencil; 'Round 2, Wed 3 Dec' with 3 more matches; button 'Add match'"
+    },
+    {
+      "name": "bracket",
+      "purpose": "Knockout bracket to the final and third-place match",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Back arrow, title 'Inter-school Football Cup'; chips 'Quarter-finals', 'Semi-finals' (selected), 'Final'; FOCAL bracket drawn with connector lines: quarter-finals 'Westbrook 2-1 Hillside', 'Riverside 0-3 Oakfield', 'Kingsway 1-1 (4-3 pens) Lakeview', 'St Mary's 2-0 Northgate'; semi-finals 'Westbrook vs Oakfield, Sat 13:00', 'Kingsway vs St Mary's, Sat 14:30'; final box 'Final, Sat 16:00, TBD vs TBD' with trophy icon; separate small card 'Third-place match, Sat 15:00'; winners in bold with accentFill score"
+    },
+    {
+      "name": "enter-times",
+      "purpose": "Official enters lane times, app ranks and awards house points",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Top bar close button, title 'Year 7 Girls 100m', subtitle 'Track, Heat 2, Official: Mr Carter'; FOCAL big stopwatch style numeric field showing '13.42' on the active lane with a number keypad style row; lane list rows: 'Lane 1, Ava Patel, Falcons, 13.42, 1st, +10 pts', 'Lane 2, Zoe Brown, Marlins, 13.88, 2nd, +8', 'Lane 3, Lily Chen, Cedars, 14.05, 3rd, +6', 'Lane 4, Ella Wright, Comets, 14.31, 4th, +4', 'Lane 5, Grace Lee, Falcons, --.--, DNS' each with a house colour dot; summary 'Points: Falcons +10, Marlins +8, Cedars +6, Comets +4'; primary button 'Submit results'"
+    },
+    {
+      "name": "match-score",
+      "purpose": "Enter a team match score in two taps",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Top bar back, title 'Round 1, Court 1'; FOCAL score card: left team 'Cedars A' with green house band, right team 'Comets A' with yellow band, huge score numbers '36' and '31' with minus and plus round buttons under each; chip 'Full time'; segmented 'Win / Draw / Loss' auto set to 'Cedars win'; row 'Top scorer' 'Jake Turner 14 pts'; note field 'Add a note'; primary button 'Save result'; helper 'League table updates instantly'"
+    },
+    {
+      "name": "standings",
+      "purpose": "House totals, medal table and league tables live",
+      "group": "core",
+      "nav": "Standings",
+      "states": [
+        "default"
+      ],
+      "content": "Title 'Standings'; segmented 'Houses' (selected), 'Medals', 'Leagues'; FOCAL podium with real-photo-free flat shapes: 1st 'Falcons 186 pts' tallest, 2nd 'Marlins 174', 3rd 'Cedars 162', with house colour bands and dark text; row '4th Comets 151'; horizontal bar chart of house points with labels; medal table card with columns Gold Silver Bronze: 'Falcons 6 4 3', 'Marlins 5 5 2', 'Cedars 4 3 6', 'Comets 3 4 5'; caption 'Updated 11:32, live'; button 'Open display mode'"
+    },
+    {
+      "name": "display-mode",
+      "purpose": "Full-screen leaderboard for a projector or hall TV",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ],
+      "content": "Full-screen display on the deep gradient (#CA047E to #6A2BB8) with white text, no tab bar; top 'Sports Day 2026, Live' with a small logo mark and a clock '11:32'; FOCAL giant house ranking list: '1 Falcons 186', '2 Marlins 174', '3 Cedars 162', '4 Comets 151' with large numbers and coloured house bars; panel 'Latest result: Year 7 Girls 100m, 1st Ava Patel, Falcons, 13.42s'; panel 'Up next: Relay 4x100 Year 7, 11:40, Track'; ticker strip 'Announcement: Tug of War final moved to Field 1'; small close X in the corner"
+    },
+    {
+      "name": "roles",
+      "purpose": "Admin gives staff access only to the events they need",
+      "group": "settings",
+      "nav": "More",
+      "states": [
+        "default"
+      ],
+      "content": "Title 'Staff and roles'; search field 'Search staff'; FOCAL card 'Mr Sam Carter, PE teacher' with real photo avatar, role chip 'Organiser', and access toggles 'Create events' on, 'Edit fixtures' on, 'Enter results' on, 'Manage users' off; list rows with real photo avatars and role chips: 'Ms Priya Shah, School admin', 'Mr Tom Reed, Official, Track + Pit A', 'Ms Hannah Ortiz, Official, Pool', 'Year 11 Helpers, Spectator'; button 'Invite staff'"
+    }
+  ],
+  "designSystem": {
+    "variant": "P91",
+    "variantName": "sago bubble pink",
+    "theme": "light",
+    "frame": "393x852 mobile (iPhone 16/17), top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#FCF4F9",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F7EAF2",
+      "accent": "#FC69C3",
+      "accentFill": "#CA047E",
+      "accentTint": "#FEE6F5",
+      "accentPressed": "#C30379",
+      "support": "#B09EFA",
+      "text": {
+        "primary": "#1F0C18",
+        "secondary": "#5E4656",
+        "tertiary": "#7A6271"
+      },
+      "border": "#F0DDE8",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "gradient": [
+        "#CA047E",
+        "#C30379"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#CE2020",
+          "tint": "#FBE5E5"
+        },
+        "info": {
+          "fg": "#C5047B",
+          "tint": "#F9E1F0"
+        }
+      },
+      "supportStrong": "#9880FA",
+      "borderStrong": "#B682AE"
+    },
+    "type": {
+      "fontFamily": "Varela Round",
+      "displayFamily": "Sniglet",
+      "numeralFamily": "Varela Round (tabular)",
+      "display": "32 / 800 Sniglet / -0.01em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); screen edge padding 20px",
+    "elevation": "card = 0 1px 2px rgba(31,12,24,.04) + 0 8px 24px rgba(31,12,24,.06)",
+    "icons": "Lucide-style rounded outline, 24px, 1.75 stroke",
+    "a11y": "white labels on accentFill only; bright accent carries ink labels or large fills; house colours carry dark text only; text on gradients >= 4.5:1; tap targets >= 44pt"
+  },
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 17.3,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 18.68,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 7.82,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 8.45,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 5.1,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 5.51,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 4.68,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 3.98,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CA047E",
+        "after": 4.66
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 5.08,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 5.48,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "danger text on its tint and on surface",
+        "ratio": 4.01,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CE2020",
+        "after": 4.53
+      },
+      {
+        "pair": "info text on its tint and on surface",
+        "ratio": 4.45,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#C5047B",
+        "after": 4.64
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 2.3,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#9880FA",
+        "after": 3.09
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.3,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#B682AE",
+        "after": 3.09
+      }
+    ],
+    "changed": {
+      "accentFill": {
+        "from": "#DE048A",
+        "to": "#CA047E"
+      }
+    },
+    "passed": true
+  }
+}

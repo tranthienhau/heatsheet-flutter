@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, height=852, initial-scale=1.0">
+  <title>Heatsheet - Welcome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#FCF4F9',
+            surface: '#FFFFFF',
+            surfaceAlt: '#F7EAF2',
+            accentDeep: '#CA047E',
+            accentBubble: '#FC69C3',
+            accentTint: '#FEE6F5',
+            accentPressed: '#C30379',
+            ink: '#1F0C18',
+            textSec: '#5E4656',
+            textTert: '#7A6271',
+            borderHairline: '#F0DDE8',
+            borderStrong: '#B682AE',
+            lavender: '#B09EFA',
+            falcons: '#E5484D',
+            marlins: '#3E7BFA',
+            cedars: '#2FA36B',
+            comets: '#F5B300'
+          },
+          fontFamily: {
+            sniglet: ['Sniglet', 'cursive', 'sans-serif'],
+            varela: ['"Varela Round"', 'sans-serif']
+          },
+          boxShadow: {
+            softCard: '0 1px 2px rgba(31,12,24,.04), 0 8px 24px rgba(31,12,24,.06)',
+            buttonShadow: '0 4px 14px rgba(202,4,126,0.28)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Varela Round', sans-serif;
+      color: #1F0C18;
+      background-color: #FCF4F9;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+    .font-sniglet {
+      font-family: 'Sniglet', cursive, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    /* Ink gradient overlay over sports photo */
+    .hero-gradient {
+      background: linear-gradient(
+        180deg,
+        rgba(31, 12, 24, 0.08) 0%,
+        rgba(31, 12, 24, 0.25) 42%,
+        rgba(31, 12, 24, 0.72) 74%,
+        #1F0C18 100%
+      );
+    }
+  </style>
+</head>
+<body class="w-[393px] h-[852px] mx-auto overflow-hidden relative bg-[#FCF4F9] flex flex-col justify-between">
+
+  <!-- TOP HERO CONTAINER (PHOTO + INK GRADIENT OVERLAY) -->
+  <div class="relative w-full h-[510px] shrink-0 overflow-hidden">
+    <!-- Real Photography Asset -->
+    <img 
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtktUcvppdcDXQqg53_YumP66Hza63Oh-Bm5Vtc6vyH3sJFgQ6rYw3FD3ILokoC6Koug_eJ5YjGALajqifsg-kh49MxsxrF1uGAhDcSTFZZfiLTVPBP9ofBgIe9NhtIbFBbeOGJ_P6fwlRl1jqAaVe_YmZWEgxsn8cpje3CgpdpYeOLUYmJ4SXKAVuw4c7YdxeQaR8MjsORKBrlON5qqDyuAiXZX_MAK2wUxExi3sD6gJXogV1Xe0dvzmrFdjd8g" 
+      alt="School children running races on sports day grass track" 
+      class="w-full h-full object-cover object-center"
+    />
+
+    <!-- Dark ink gradient for legibility & contrast -->
+    <div class="absolute inset-0 hero-gradient flex flex-col justify-between p-5 pt-14">
+      
+      <!-- Top Bar: Logo & School Tag -->
+      <div class="flex items-center justify-between z-10">
+        <div class="flex items-center space-x-2.5">
+          <img 
+            src="https://lh3.googleusercontent.com/aida/ALJJyrBKiLrlbWJWxTPDW5w6Yu_lG3n0gxX75AG_2h0CAA4Z-9urcSCtYnVzx33GlwJsnLkevE1FI6RX33yjrq_ZLJLUiztcaymQ3Di5cs9-H3PBIXONKpXFIeVQsi4I0cFn0nd5R8vo5ihuIYuIV9JiFhigYydbuZtlyjY_4A212NVhu_KoIqbiWJLE68Xvj9qm2e-nuZSJeOe8nUujtEPB20Qh0pVi5DfoSUw_I4e9lOMb" 
+            alt="Heatsheet Logo" 
+            class="w-10 h-10 rounded-2xl shadow-md border border-white/20"
+          />
+          <div class="flex flex-col">
+            <span class="font-sniglet text-white text-lg tracking-tight leading-none drop-shadow-sm">heatsheet</span>
+            <span class="text-[12px] text-white/80 font-medium tracking-wide">Sports Manager</span>
+          </div>
+        </div>
+
+        <!-- Event Pill -->
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1F0C18]/60 backdrop-blur-md border border-white/15 text-white text-[13px] font-medium">
+          <span class="w-2 h-2 rounded-full bg-[#FC69C3] animate-pulse"></span>
+          <span>Westbrook Academy</span>
+        </div>
+      </div>
+
+      <!-- House Dots Indicator in Photo Space -->
+      <div class="z-10 flex items-center gap-2 mb-2">
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1F0C18]/60 backdrop-blur-sm border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-[#E5484D]"></span>
+          <span class="text-[12px] text-white/90 font-medium">Falcons</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1F0C18]/60 backdrop-blur-sm border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-[#3E7BFA]"></span>
+          <span class="text-[12px] text-white/90 font-medium">Marlins</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1F0C18]/60 backdrop-blur-sm border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-[#2FA36B]"></span>
+          <span class="text-[12px] text-white/90 font-medium">Cedars</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1F0C18]/60 backdrop-blur-sm border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-[#F5B300]"></span>
+          <span class="text-[12px] text-white/90 font-medium">Comets</span>
+        </div>
+      </div>
+
+      <!-- Hero Headline & Subline on the ink overlay -->
+      <div class="z-10 mb-2">
+        <h1 class="font-sniglet text-[31px] text-white leading-[1.12] drop-shadow-sm mb-2">
+          Run sports day<br>from one screen.
+        </h1>
+        <p class="text-[14px] text-white/90 leading-snug font-normal">
+          Fixtures, results and house points, live for every teacher and every screen.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM CARD SECTION -->
+  <div class="flex-1 bg-[#FCF4F9] -mt-5 rounded-t-[28px] relative z-20 px-5 pt-5 pb-9 flex flex-col justify-between shadow-[0_-4px_20px_rgba(31,12,24,0.06)]">
+    
+    <!-- 3 Proof Chips Row -->
+    <div>
+      <p class="text-[13px] text-[#7A6271] font-medium uppercase tracking-wider mb-2.5 px-1">Everything instant</p>
+      <div class="grid grid-cols-3 gap-2">
+        <!-- Chip 1: Auto fixtures -->
+        <div class="h-10 px-2 rounded-full bg-[#FEE6F5] border border-[#F0DDE8] flex items-center justify-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4 text-[#CA047E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span class="text-[12px] font-semibold text-[#CA047E] whitespace-nowrap">Auto fixtures</span>
+        </div>
+
+        <!-- Chip 2: Live standings -->
+        <div class="h-10 px-2 rounded-full bg-[#FEE6F5] border border-[#F0DDE8] flex items-center justify-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4 text-[#CA047E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path>
+            <path d="M6 4h12v5a6 6 0 0 1-12 0V4z"></path>
+          </svg>
+          <span class="text-[12px] font-semibold text-[#CA047E] whitespace-nowrap">Live standings</span>
+        </div>
+
+        <!-- Chip 3: Big-screen mode -->
+        <div class="h-10 px-2 rounded-full bg-[#FEE6F5] border border-[#F0DDE8] flex items-center justify-center gap-1.5 shadow-sm">
+          <svg class="w-4 h-4 text-[#CA047E] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span class="text-[12px] font-semibold text-[#CA047E] whitespace-nowrap">Big-screen mode</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons & Secondary Links -->
+    <div class="flex flex-col gap-3 mt-4">
+      <!-- Primary Button: Sign in with school email -->
+      <button 
+        type="button" 
+        class="w-full h-14 rounded-full bg-[#CA047E] hover:bg-[#C30379] active:scale-[0.98] text-white font-semibold text-[16px] tracking-wide shadow-buttonShadow flex items-center justify-center gap-2.5 transition-all duration-150 cursor-pointer"
+      >
+        <svg class="w-5 h-5 text-white/95" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Sign in with school email</span>
+      </button>
+
+      <!-- Text Button: View live results as a spectator -->
+      <button 
+        type="button" 
+        class="w-full py-2.5 text-center text-[#5E4656] hover:text-[#CA047E] font-medium text-[14px] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+      >
+        <span>View live results as a spectator</span>
+        <svg class="w-4 h-4 text-[#CA047E]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+
+      <!-- Home Indicator bar clearance -->
+      <div class="w-32 h-1 bg-[#1F0C18]/15 rounded-full mx-auto mt-1"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heatsheet - Display Mode Leaderboard</title>
+  <!-- Google Fonts: Sniglet 800 & Varela Round -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Sniglet', 'cursive'],
+            body: ['"Varela Round"', 'sans-serif'],
+          },
+          colors: {
+            deepStart: '#CA047E',
+            deepEnd: '#6A2BB8',
+            bubble: '#FC69C3',
+            falcons: '#E5484D',
+            marlins: '#3E7BFA',
+            cedars: '#2FA36B',
+            comets: '#F5B300',
+            ink: '#1F0C18',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Varela Round', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #CA047E 0%, #90179A 50%, #6A2BB8 100%);
+      color: #FFFFFF;
+      min-height: 100vh;
+    }
+    .font-display {
+      font-family: 'Sniglet', cursive;
+      font-weight: 800;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.96); }
+    }
+    .live-pulse {
+      animation: pulse-subtle 2s infinite ease-in-out;
+    }
+    @keyframes ticker-slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-content {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: ticker-slide 28s linear infinite;
+    }
+  </style>
+</head>
+<body class="flex flex-col justify-between min-h-screen p-6 md:p-8 lg:p-10 select-none relative">
+
+  <!-- Background decorative stadium glow track lines (flat 2D vector curves) -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="960" cy="540" rx="900" ry="460" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="14 14"/>
+      <ellipse cx="960" cy="540" rx="800" ry="380" stroke="#FFFFFF" stroke-width="2"/>
+      <ellipse cx="960" cy="540" rx="700" ry="300" stroke="#FFFFFF" stroke-width="2"/>
+      <ellipse cx="960" cy="540" rx="600" ry="220" stroke="#FFFFFF" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <!-- Top App Bar / Display Header -->
+  <header class="relative z-10 flex items-center justify-between gap-4 pb-4 border-b border-white/15">
+    <!-- Brand / Title / Event Info -->
+    <div class="flex items-center gap-4 md:gap-6">
+      <!-- Heatsheet H Logo Mark -->
+      <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center p-2 shadow-lg">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrBKiLrlbWJWxTPDW5w6Yu_lG3n0gxX75AG_2h0CAA4Z-9urcSCtYnVzx33GlwJsnLkevE1FI6RX33yjrq_ZLJLUiztcaymQ3Di5cs9-H3PBIXONKpXFIeVQsi4I0cFn0nd5R8vo5ihuIYuIV9JiFhigYydbuZtlyjY_4A212NVhu_KoIqbiWJLE68Xvj9qm2e-nuZSJeOe8nUujtEPB20Qh0pVi5DfoSUw_I4e9lOMb" alt="Heatsheet Logo" class="w-full h-full object-contain rounded-xl drop-shadow" />
+      </div>
+
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3">
+          <h1 class="font-display text-2xl md:text-3xl lg:text-4xl tracking-tight text-white drop-shadow-sm">Sports Day 2026</h1>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-xs md:text-sm font-semibold tracking-wide uppercase text-white shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FC69C3] live-pulse"></span>
+            <span>Live</span>
+          </div>
+        </div>
+        <span class="text-sm md:text-base text-white/80 font-normal">Westbrook Academy • Inter-House Athletics Championship</span>
+      </div>
+    </div>
+
+    <!-- Right Controls: Big Clock, Audio/Broadcast badge, Close (X) -->
+    <div class="flex items-center gap-4 md:gap-6">
+      <!-- Live Clock Display -->
+      <div class="flex items-center gap-2 px-4 py-2 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-md">
+        <svg class="w-5 h-5 text-[#FC69C3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span class="font-display text-2xl md:text-3xl tracking-wide tabular-nums text-white">11:32</span>
+      </div>
+
+      <!-- Small Exit / Close Button (X) -->
+      <button aria-label="Exit Display Mode" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/35 hover:bg-black/60 active:scale-95 transition backdrop-blur-md border border-white/25 flex items-center justify-center text-white/90 hover:text-white shadow-md">
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Grid Area: Giant Leaderboard (Left/Center Hero) + Live Feed Panels (Right) -->
+  <main class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 my-auto py-4 items-stretch">
+    
+    <!-- FOCAL GIANT HOUSE RANKING LIST (Columns: 7 on desktop) -->
+    <section class="lg:col-span-7 flex flex-col justify-center space-y-3 md:space-y-4">
+      <div class="flex items-center justify-between px-2">
+        <span class="font-display text-xl md:text-2xl text-white/90 tracking-wide uppercase">House Championship Standings</span>
+        <span class="text-xs md:text-sm font-semibold tracking-wider text-white/70 uppercase">Score after 14/32 events</span>
+      </div>
+
+      <!-- Rank 1: Falcons (186 pts) - Champion Row -->
+      <div class="relative overflow-hidden rounded-3xl bg-black/35 backdrop-blur-lg border-2 border-white/30 p-4 md:p-5 lg:p-6 shadow-2xl flex items-center justify-between group">
+        <!-- Colored House indicator accent bar on the left edge -->
+        <div class="absolute left-0 top-0 bottom-0 w-3 md:w-4 bg-[#E5484D]"></div>
+        
+        <div class="flex items-center gap-4 md:gap-6 pl-3 md:pl-4">
+          <!-- Rank Badge -->
+          <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#E5484D] text-white flex flex-col items-center justify-center shadow-lg">
+            <span class="text-[11px] font-bold uppercase leading-none opacity-90">Pos</span>
+            <span class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight">1</span>
+          </div>
+
+          <!-- House Info -->
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#E5484D]"></span>
+              <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-white tracking-wide">Falcons</h2>
+              <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-semibold tracking-wider uppercase">Leader</span>
+            </div>
+            <!-- Progress relative track bar -->
+            <div class="w-48 sm:w-64 md:w-80 h-3 rounded-full bg-white/15 mt-2.5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#E5484D]" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Score -->
+        <div class="text-right pr-2 md:pr-4">
+          <div class="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight tabular-nums drop-shadow-md">
+            186
+          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-[#FC69C3]">Points</span>
+        </div>
+      </div>
+
+      <!-- Rank 2: Marlins (174 pts) -->
+      <div class="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-md border border-white/20 p-4 md:p-5 lg:p-6 shadow-xl flex items-center justify-between">
+        <div class="absolute left-0 top-0 bottom-0 w-3 md:w-4 bg-[#3E7BFA]"></div>
+
+        <div class="flex items-center gap-4 md:gap-6 pl-3 md:pl-4">
+          <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#3E7BFA]/30 border border-[#3E7BFA]/50 text-white flex flex-col items-center justify-center">
+            <span class="text-[11px] font-bold uppercase leading-none opacity-80">Pos</span>
+            <span class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight">2</span>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#3E7BFA]"></span>
+              <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-white tracking-wide">Marlins</h2>
+              <span class="text-xs text-white/70 font-semibold">-12 pts behind</span>
+            </div>
+            <div class="w-48 sm:w-64 md:w-80 h-3 rounded-full bg-white/15 mt-2.5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#3E7BFA]" style="width: 93.5%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right pr-2 md:pr-4">
+          <div class="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight tabular-nums">
+            174
+          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-white/70">Points</span>
+        </div>
+      </div>
+
+      <!-- Rank 3: Cedars (162 pts) -->
+      <div class="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-md border border-white/20 p-4 md:p-5 lg:p-6 shadow-xl flex items-center justify-between">
+        <div class="absolute left-0 top-0 bottom-0 w-3 md:w-4 bg-[#2FA36B]"></div>
+
+        <div class="flex items-center gap-4 md:gap-6 pl-3 md:pl-4">
+          <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#2FA36B]/30 border border-[#2FA36B]/50 text-white flex flex-col items-center justify-center">
+            <span class="text-[11px] font-bold uppercase leading-none opacity-80">Pos</span>
+            <span class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight">3</span>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#2FA36B]"></span>
+              <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-white tracking-wide">Cedars</h2>
+              <span class="text-xs text-white/70 font-semibold">-24 pts behind</span>
+            </div>
+            <div class="w-48 sm:w-64 md:w-80 h-3 rounded-full bg-white/15 mt-2.5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#2FA36B]" style="width: 87.1%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right pr-2 md:pr-4">
+          <div class="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight tabular-nums">
+            162
+          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-white/70">Points</span>
+        </div>
+      </div>
+
+      <!-- Rank 4: Comets (151 pts) -->
+      <div class="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-md border border-white/20 p-4 md:p-5 lg:p-6 shadow-xl flex items-center justify-between">
+        <div class="absolute left-0 top-0 bottom-0 w-3 md:w-4 bg-[#F5B300]"></div>
+
+        <div class="flex items-center gap-4 md:gap-6 pl-3 md:pl-4">
+          <div class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#F5B300]/30 border border-[#F5B300]/50 text-white flex flex-col items-center justify-center">
+            <span class="text-[11px] font-bold uppercase leading-none opacity-80">Pos</span>
+            <span class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight">4</span>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#F5B300]"></span>
+              <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-white tracking-wide">Comets</h2>
+              <span class="text-xs text-white/70 font-semibold">-35 pts behind</span>
+            </div>
+            <div class="w-48 sm:w-64 md:w-80 h-3 rounded-full bg-white/15 mt-2.5 overflow-hidden">
+              <div class="h-full rounded-full bg-[#F5B300]" style="width: 81.2%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right pr-2 md:pr-4">
+          <div class="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight tabular-nums">
+            151
+          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-white/70">Points</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN: LATEST RESULT & UP NEXT PANELS (Columns: 5 on desktop) -->
+    <aside class="lg:col-span-5 flex flex-col justify-between space-y-4">
+      
+      <!-- Panel 1: Latest Result Card with dark translucent fill -->
+      <div class="rounded-3xl bg-black/40 backdrop-blur-md border border-white/20 p-6 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        <!-- Accent ribbon glow top -->
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FC69C3] via-[#CA047E] to-[#B09EFA]"></div>
+        
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#FC69C3]"></span>
+              <span class="font-display text-sm tracking-wider uppercase text-[#FC69C3]">Latest Result</span>
+            </div>
+            <span class="text-xs font-medium text-white/70 bg-white/10 px-2.5 py-1 rounded-full">Official Verified</span>
+          </div>
+
+          <h3 class="font-display text-2xl md:text-3xl text-white mb-1">Year 7 Girls 100m</h3>
+          <p class="text-sm text-white/70 mb-4">Track Final • Main Oval</p>
+
+          <!-- 1st Place Highlight Card -->
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#E5484D] text-white font-display text-xl flex items-center justify-center shadow-md">
+                1st
+              </div>
+              <div>
+                <div class="font-display text-xl text-white">Ava Patel</div>
+                <div class="flex items-center gap-2 text-xs text-white/80">
+                  <span class="w-2 h-2 rounded-full bg-[#E5484D]"></span>
+                  <span>Falcons</span>
+                  <span>•</span>
+                  <span>+10 pts</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="font-display text-2xl md:text-3xl text-white tabular-nums">13.42<span class="text-base text-white/80 font-normal">s</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd and 3rd runners summary line -->
+        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-white/75">
+          <span>2nd: Zoe Brown (Marlins, 13.88s)</span>
+          <span>3rd: Lily Chen (Cedars, 14.05s)</span>
+        </div>
+      </div>
+
+      <!-- Panel 2: Up Next Event Card with dark translucent fill -->
+      <div class="rounded-3xl bg-black/40 backdrop-blur-md border border-white/20 p-6 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        <!-- Accent ribbon glow top -->
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#B09EFA] via-[#3E7BFA] to-[#FC69C3]"></div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#B09EFA]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 14 14"/>
+              </svg>
+              <span class="font-display text-sm tracking-wider uppercase text-[#B09EFA]">Up Next</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FC69C3]/20 border border-[#FC69C3]/40 text-xs font-display text-white">
+              <span class="w-2 h-2 rounded-full bg-[#FC69C3] live-pulse"></span>
+              <span>In 8 mins</span>
+            </div>
+          </div>
+
+          <h3 class="font-display text-2xl md:text-3xl text-white mb-2">Relay 4x100 Year 7</h3>
+
+          <div class="grid grid-cols-2 gap-3 mt-3">
+            <div class="rounded-2xl bg-white/10 border border-white/15 p-3">
+              <span class="text-[11px] uppercase tracking-wider text-white/60 block font-semibold">Scheduled Time</span>
+              <span class="font-display text-xl text-white tabular-nums">11:40</span>
+            </div>
+            <div class="rounded-2xl bg-white/10 border border-white/15 p-3">
+              <span class="text-[11px] uppercase tracking-wider text-white/60 block font-semibold">Location</span>
+              <span class="font-display text-xl text-white">Main Track</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-white/75">
+          <span>All 4 Houses Competing</span>
+          <span class="text-[#FC69C3] font-semibold">Double Points Heat</span>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- Bottom Live Ticker Strip (Hall Announcement) -->
+  <footer class="relative z-10 mt-2">
+    <div class="w-full rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 px-4 py-3 flex items-center gap-4 overflow-hidden shadow-2xl">
+      <!-- Ticker Label Badge -->
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#FC69C3] text-[#1F0C18] font-bold text-xs uppercase tracking-wider whitespace-nowrap shrink-0 shadow-md">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+        <span>Live Announcement</span>
+      </div>
+
+      <!-- Scrolling Ticker Text Container -->
+      <div class="relative overflow-hidden w-full text-sm md:text-base font-medium text-white flex items-center">
+        <div class="ticker-content flex items-center gap-12">
+          <span class="flex items-center gap-3">
+            <span class="text-[#FC69C3] font-bold">📢 Notice:</span>
+            <span>Tug of War final moved to Field 1 at 12:15</span>
+          </span>
+          <span class="text-white/40">•</span>
+          <span class="flex items-center gap-3">
+            <span class="text-[#2FA36B] font-bold">🏆 Record Broken:</span>
+            <span>Ava Patel (Falcons) set a new Year 7 100m school record of 13.42s!</span>
+          </span>
+          <span class="text-white/40">•</span>
+          <span class="flex items-center gap-3">
+            <span class="text-[#F5B300] font-bold">📍 Marshalling Call:</span>
+            <span>All Year 7 4x100m relay runners report to Track Marshall area now</span>
+          </span>
+          <span class="text-white/40">•</span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="flex items-center gap-3">
+            <span class="text-[#FC69C3] font-bold">📢 Notice:</span>
+            <span>Tug of War final moved to Field 1 at 12:15</span>
+          </span>
+          <span class="text-white/40">•</span>
+          <span class="flex items-center gap-3">
+            <span class="text-[#2FA36B] font-bold">🏆 Record Broken:</span>
+            <span>Ava Patel (Falcons) set a new Year 7 100m school record of 13.42s!</span>
+          </span>
+          <span class="text-white/40">•</span>
+          <span class="flex items-center gap-3">
+            <span class="text-[#F5B300] font-bold">📍 Marshalling Call:</span>
+            <span>All Year 7 4x100m relay runners report to Track Marshall area now</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

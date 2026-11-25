@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, height=852, initial-scale=1.0">
+  <title>Heatsheet - Role Select</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#FCF4F9',
+            brandSurface: '#FFFFFF',
+            brandSurfaceAlt: '#F7EAF2',
+            brandPrimary: '#CA047E',
+            brandPrimaryPressed: '#C30379',
+            brandAccentBubble: '#FC69C3',
+            brandAccentTint: '#FEE6F5',
+            brandLavender: '#B09EFA',
+            brandInk: '#1F0C18',
+            brandSecondary: '#5E4656',
+            brandTertiary: '#7A6271',
+            brandBorderHairline: '#F0DDE8',
+            brandBorderStrong: '#B682AE',
+          },
+          fontFamily: {
+            sniglet: ['Sniglet', 'cursive'],
+            varela: ['"Varela Round"', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 1px 2px rgba(31,12,24,.04), 0 8px 24px rgba(31,12,24,.06)',
+            selected: '0 4px 20px rgba(202,4,126,0.12)',
+            btn: '0 4px 16px rgba(202,4,126,0.28)',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Varela Round', sans-serif;
+      color: #1F0C18;
+      background-color: #FCF4F9;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-brandBg min-h-screen flex justify-center items-start antialiased selection:bg-brandAccentTint selection:text-brandPrimary">
+  <!-- Mobile Container (393px x 852px) -->
+  <main class="w-[393px] min-h-[852px] bg-brandBg flex flex-col justify-between px-5 pt-8 pb-9 relative overflow-hidden">
+    
+    <!-- Top Decorative subtle ambient blob -->
+    <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-brandAccentTint opacity-60 blur-2xl pointer-events-none"></div>
+
+    <!-- Header & Content Section -->
+    <div class="relative z-10 flex flex-col">
+      
+      <!-- Top Bar: Back Arrow & Westbrook Pill Tag -->
+      <div class="flex items-center justify-between mb-6 pt-3">
+        <button type="button" aria-label="Go back" class="w-11 h-11 rounded-full bg-brandSurface border border-brandBorderHairline shadow-sm flex items-center justify-center text-brandInk hover:bg-brandSurfaceAlt active:scale-95 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"/>
+            <path d="m12 19-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brandSurface border border-brandBorderHairline shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-brandPrimary animate-pulse"></span>
+          <span class="text-xs font-semibold text-brandSecondary">Sports Day 2026</span>
+        </div>
+      </div>
+
+      <!-- Screen Title & Subline -->
+      <div class="mb-6">
+        <h1 class="font-sniglet text-[30px] leading-tight text-brandInk tracking-tight mb-2">
+          How are you helping today?
+        </h1>
+        <p class="text-[14px] leading-relaxed text-brandSecondary font-medium flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B09EFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Westbrook Academy, Sports Day 2026
+        </p>
+      </div>
+
+      <!-- 4 Selectable Role Rows -->
+      <div class="flex flex-col gap-3" role="radiogroup" aria-label="Select your role">
+        
+        <!-- Role 1: School admin -->
+        <div role="radio" aria-checked="false" tabindex="0" class="group bg-brandSurface rounded-[20px] p-4 border border-brandBorderHairline shadow-card hover:border-brandBorderStrong hover:bg-white active:scale-[0.99] transition-all cursor-pointer flex items-center justify-between">
+          <div class="flex items-center gap-3.5 pr-2">
+            <div class="w-12 h-12 rounded-[14px] bg-brandSurfaceAlt flex items-center justify-center flex-shrink-0 group-hover:bg-brandAccentTint transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CA047E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-[16px] font-bold text-brandInk leading-snug">School admin</h2>
+              <p class="text-[13px] text-brandSecondary leading-normal mt-0.5">Manage houses, users and events</p>
+            </div>
+          </div>
+          <!-- Unchecked radio dot -->
+          <div class="w-6 h-6 rounded-full border-2 border-brandBorderStrong flex-shrink-0 flex items-center justify-center bg-white group-hover:border-brandPrimary transition-colors"></div>
+        </div>
+
+        <!-- Role 2: Organiser / PE teacher (SELECTED FOCAL CARD) -->
+        <div role="radio" aria-checked="true" tabindex="0" class="relative bg-brandSurface rounded-[20px] p-4 border-2 border-brandPrimary shadow-selected ring-4 ring-brandAccentTint active:scale-[0.99] transition-all cursor-pointer flex items-center justify-between">
+          <!-- Recommended/Current indicator badge -->
+          <span class="absolute -top-2.5 right-6 px-2.5 py-0.5 rounded-full bg-brandPrimary text-white text-[11px] font-bold tracking-wide uppercase shadow-sm">
+            Active Selection
+          </span>
+          <div class="flex items-center gap-3.5 pr-2">
+            <div class="w-12 h-12 rounded-[14px] bg-brandAccentBubble flex items-center justify-center flex-shrink-0 shadow-sm">
+              <!-- Whistle / Trophy / Clipboard Icon in brand ink as required on bubble pink -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F0C18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h2 class="text-[16px] font-bold text-brandInk leading-snug">Organiser / PE teacher</h2>
+              </div>
+              <p class="text-[13px] text-brandSecondary leading-normal mt-0.5">Create events, fixtures and enter scores</p>
+            </div>
+          </div>
+          <!-- Checked indicator pill with checkmark -->
+          <div class="w-6 h-6 rounded-full bg-brandPrimary flex-shrink-0 flex items-center justify-center text-white shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Role 3: Official -->
+        <div role="radio" aria-checked="false" tabindex="0" class="group bg-brandSurface rounded-[20px] p-4 border border-brandBorderHairline shadow-card hover:border-brandBorderStrong hover:bg-white active:scale-[0.99] transition-all cursor-pointer flex items-center justify-between">
+          <div class="flex items-center gap-3.5 pr-2">
+            <div class="w-12 h-12 rounded-[14px] bg-brandSurfaceAlt flex items-center justify-center flex-shrink-0 group-hover:bg-brandAccentTint transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CA047E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-[16px] font-bold text-brandInk leading-snug">Official</h2>
+              <p class="text-[13px] text-brandSecondary leading-normal mt-0.5">Enter times and results for assigned stations</p>
+            </div>
+          </div>
+          <!-- Unchecked radio dot -->
+          <div class="w-6 h-6 rounded-full border-2 border-brandBorderStrong flex-shrink-0 flex items-center justify-center bg-white group-hover:border-brandPrimary transition-colors"></div>
+        </div>
+
+        <!-- Role 4: Spectator -->
+        <div role="radio" aria-checked="false" tabindex="0" class="group bg-brandSurface rounded-[20px] p-4 border border-brandBorderHairline shadow-card hover:border-brandBorderStrong hover:bg-white active:scale-[0.99] transition-all cursor-pointer flex items-center justify-between">
+          <div class="flex items-center gap-3.5 pr-2">
+            <div class="w-12 h-12 rounded-[14px] bg-brandSurfaceAlt flex items-center justify-center flex-shrink-0 group-hover:bg-brandAccentTint transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CA047E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-[16px] font-bold text-brandInk leading-snug">Spectator</h2>
+              <p class="text-[13px] text-brandSecondary leading-normal mt-0.5">View live scores and standings</p>
+            </div>
+          </div>
+          <!-- Unchecked radio dot -->
+          <div class="w-6 h-6 rounded-full border-2 border-brandBorderStrong flex-shrink-0 flex items-center justify-center bg-white group-hover:border-brandPrimary transition-colors"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Action & Helper Section (Clear of home indicator ~34px, no bottom tab bar) -->
+    <div class="relative z-10 flex flex-col items-center pt-5 pb-1">
+      
+      <!-- Helper Text with Shield/Lock Icon -->
+      <div class="flex items-center gap-1.5 mb-4 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7A6271" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span class="text-[12px] font-medium text-brandTertiary">
+          Your school admin can change your access later
+        </span>
+      </div>
+
+      <!-- Primary Action Button: Continue as Organiser -->
+      <button type="button" class="w-full h-14 rounded-full bg-brandPrimary hover:bg-brandPrimaryPressed active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-btn text-white text-[16px] font-semibold tracking-wide">
+        <span>Continue as Organiser</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </button>
+
+      <!-- iOS Home Indicator bar -->
+      <div class="w-32 h-1 rounded-full bg-brandBorderStrong/40 mt-5 mb-0.5"></div>
+    </div>
+
+  </main>
+</body>
+</html>
